@@ -1,0 +1,37 @@
+.header {
+    background: url('image.png') no-repeat center center;
+    background-size: cover;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+.header h1 {
+    position: relative;
+    color: white;
+    font-size: 2.5rem;
+}
+.nav-link {
+    color: #333;
+    transition: background-color 0.3s, color 0.3s;
+}
+.nav-link:hover {
+    background-color: #333;
+    color: white;
+}
+.container {
+    padding: 20px;
+}
+body{
+    color: #d71313 !important;
+}
