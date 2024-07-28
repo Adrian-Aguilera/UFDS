@@ -1,17 +1,17 @@
 <template>
-  <nav class="navbar navbar-expand-sm bg-light justify-content-center">
+  <nav class="navbar navbar-expand-sm justify-content-center">
     <ul class="navbar-nav">
         <li class="nav-item">
-            <a class="nav-link" href="#conoce">Conoce tu Biblioteca</a>
+            <a class="original-button" href="#conoce">Conoce tu Biblioteca</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#servicios">Servicios</a>
+            <a class="original-button" href="#servicios">Servicios</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#recursos">Recursos</a>
+            <a class="original-button" href="#recursos">Recursos</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#bibliografia">Nueva Bibliografía</a>
+            <a class="original-button" href="#bibliografia">Nueva Bibliografía</a>
         </li>
     </ul>
   </nav>
@@ -26,18 +26,33 @@ export default {
 }
 </script>
 <style scoped>
-h3 {
-  margin: 40px 0 0;
+.nav-link {
+  color: #333;
+  transition: background-color 0.3s, color 0.3s;
 }
-ul {
-  list-style-type: none;
-  padding: 0;
+.nav-link:hover {
+  background-color: #333;
 }
-li {
-  display: inline-block;
-  margin: 0 10px;
+
+.original-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  text-decoration: none;
+  color: #e75757;
+  font-size: 18px;
+  border-radius: 5px;
+  width: 200px;
+  height: 40px;
+  font-weight: bold;
+  border: 2px dashed #cb3030;
+  transition: 0.3s;
+  background-color: #fff176e2;
+  margin-left: 10px;
 }
-a {
-  color: #42b983;
+
+.original-button:hover {
+  opacity: .8;
 }
 </style>
