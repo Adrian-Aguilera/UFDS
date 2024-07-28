@@ -1,6 +1,6 @@
 <template>
     <div class="container-lg">
-        <div class="mt-4">
+        <div class="mt-5 mb-5">
             <div class="accordion accordion-flush" id="accordionFlushExample">
                 <div class="accordion-item">
                   <h2 class="accordion-header">
