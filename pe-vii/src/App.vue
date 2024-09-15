@@ -1,7 +1,9 @@
 <template>
   <nav>
     <router-link to="/">Home</router-link> |
-    <router-link to="/cuestionario">Cuestionario</router-link>
+    <router-link to="/cuestionario">Cuestionario</router-link>|
+    <router-link to="/calculadora">calculadora</router-link>|
+
 
   </nav>
   <router-view/>

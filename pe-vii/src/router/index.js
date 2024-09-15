@@ -16,7 +16,7 @@ const routes = [
   },
   {
     path: '/calculadora',
-    name: 'cuestionarioName',
+    name: 'calculadoraName',
     component: CalculadoraView
   },
 ]
