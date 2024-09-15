@@ -8,6 +8,14 @@
                         <option v-for="(opciones, index ) in datos.opciones" :key="index +1" :value="index +1 " > {{ opciones }} </option>
                     </select>
                 </div>
+                <div>
+                    <div v-if="respuesta[indexPregunta] === true" class="alert alert-success" role="alert">
+                        Respuesta correcta
+                    </div>
+                    <div v-else class="alert alert-danger" role="alert">
+                        Respuesta incorrecta
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -22,6 +30,7 @@ export default {
     data() {
         return {
             valor: Array(null),
+            respuesta:Array(null)
         }
     },
     watch: {
@@ -33,8 +42,12 @@ export default {
                     const correcta = this.preguntasArray[indexPregunta].correcta;
                     if (respuestaSeleccionada == correcta) {
                         console.log(`Pregunta ${indexPregunta}: Respuesta correcta`);
+                        this.respuesta[indexPregunta] = true;
                     } else {
                         console.log(`Pregunta ${indexPregunta}: Respuesta incorrecta`);
+                        console.log('>>>', this.respuesta)
+                        this.respuesta[indexPregunta] = false;
+
                     }
                 });
             }
