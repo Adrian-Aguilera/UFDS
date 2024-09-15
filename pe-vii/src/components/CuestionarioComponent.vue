@@ -1,25 +1,12 @@
 <template>
     <div class="container">
         <div class="form-check">
-            <div v-for="datos in preguntasArray" :key="datos.id">
+            <div v-for="(datos) in preguntasArray" :key="datos.id">
                 <p> {{ datos.pregunta }} </p>
-                <div style="display: flex;">
-                    <input class="form-check-input" v-model="respuesta" type="checkbox" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">
-                      {{ datos.opcion1 }}
-                    </label>
-                </div>
-                <div style="display: flex;">
-                    <input class="form-check-input" v-model="respuesta" type="checkbox" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">
-                      {{ datos.opcion2 }}
-                    </label>
-                </div>
-                <div style="display: flex;">
-                    <input class="form-check-input" v-model="respuesta" type="checkbox" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">
-                      {{ datos.opcion3 }}
-                    </label>
+                <div style="display: flex;" >
+                    <select class="form-select"  aria-label="Default select example" v-model="valor">
+                        <option v-for="(opciones, index ) in datos.opciones" :key="opciones.id" :value="index +1 " > {{ opciones }} </option>
+                    </select>
                 </div>
             </div>
         </div>
@@ -34,12 +21,15 @@ export default {
     },
     data() {
         return {
-            respuesta: ''
+            valor: [],
+            respuestaCorrecta: ''
         }
     },
     watch:{
-        respuesta(nuevoValor, valorAnterior) {
+        valor(nuevoValor, valorAnterior) {
+            console.log('asd', this.preguntasArray);
             console.log('El mensaje cambió de:', valorAnterior, 'a:', nuevoValor);
+
         }
     }
 }
