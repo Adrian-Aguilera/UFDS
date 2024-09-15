@@ -9,7 +9,9 @@
             <input type="number" v-model="porcentajePropina" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
         </div>
 
-        
+        <div v-if="total != null" class="alert alert-primary" role="alert">
+           Total: {{ total }}
+        </div>
     </div>
 </template>
 <script>
@@ -23,13 +25,14 @@ export default {
         return {
             facturaInput: null,
             porcentajePropina: null,
+            total: null
         }
     },
     methods:{
         calcularMonto(facturaInput, porcentajePropina){
             const montoPropina = facturaInput * (porcentajePropina / 100);
             const montoTotal = facturaInput + montoPropina
-            console.log('>>>>0', montoTotal)
+            this.total = montoTotal
         }
     },
     watch:{
