@@ -1,7 +1,7 @@
 <template>
     <div>
         <h3>Calculadora Moneda</h3>
-        <ConvertidorMonedaSComponent title="monto:"/>
+        <ConvertidorMonedaSComponent title="monto:" />
     </div>
 </template>
 <script>
