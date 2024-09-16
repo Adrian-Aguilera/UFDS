@@ -3,6 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import CuestionarioView from '@/views/CuestionarioView.vue'
 import CalculadoraView from '@/views/CalculadoraView.vue'
 import CalculadoraMonedaSView from '@/views/CalculadoraMonedaSView.vue'
+import NumeroOcultoView from '@/views/NumeroOcultoView.vue'
 
 const routes = [
   {
@@ -24,6 +25,11 @@ const routes = [
     path: '/calculadoraMoneda',
     name: 'calculadoraMonedaName',
     component: CalculadoraMonedaSView
+  },
+  {
+    path: '/numeroOculto',
+    name: 'numeroOcultoName',
+    component: NumeroOcultoView
   },
 ]
 

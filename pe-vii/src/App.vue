@@ -4,6 +4,7 @@
     <router-link to="/cuestionario">Cuestionario</router-link>|
     <router-link to="/calculadora">calculadora</router-link>|
     <router-link to="/calculadoraMoneda">calculadora Moneda</router-link>|
+    <router-link to="/numeroOculto">Adivina el numero oculto</router-link>|
   </nav>
   <router-view/>
 </template>
