@@ -10,13 +10,13 @@
 export default {
     data() {
         return {
-            contador: 0
+            contador: this.$store.getters.getContador
         }
     },
     methods: {
         incrementar() {
             //aqui llamamos a la accion de vuex
-            this.$store.dispatch('agregarContadorAcction', 1)
+            this.$store.dispatch('agregarContadorAcction', 2) //el primer argumento es el contexto, el segundo la cantidad a incrementar
             this.contador = this.$store.getters.getContador
         }
     }

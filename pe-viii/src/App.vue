@@ -1,6 +1,7 @@
 <template>
   <nav>
-    <router-link to="/">Contador vista 1</router-link>
+    <router-link to="/">Contador vista 1</router-link> |
+    <router-link to="/contadorSegundaVista">Contador vista 2</router-link>
   </nav>
   <router-view/>
 </template>
