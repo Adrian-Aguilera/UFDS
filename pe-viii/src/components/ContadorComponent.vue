@@ -15,7 +15,9 @@ export default {
     },
     methods: {
         incrementar() {
-            this.contador++
+            //aqui llamamos a la accion de vuex
+            this.$store.dispatch('agregarContadorAcction', 1)
+            this.contador = this.$store.getters.getContador
         }
     }
 }
