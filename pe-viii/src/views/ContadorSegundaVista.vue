@@ -1,7 +1,11 @@
 <template>
-    <div>
-        <h1>vista del para saber cuanto va en el contador </h1>
-        <p>cantidad: {{cantidad}}</p>
+    <div class="pa-md-4 mx-lg-auto">
+        <v-alert text="contador de vista actual:" type="success" icon="$last" class="mx-auto rounded-0" max-width="344"></v-alert>
+        <v-card title="" class="mx-auto  bg-purple-darken-2 rounded-0" max-width="344">
+            <v-card-text>
+                cantidad actual: <b>{{ cantidad }}</b>
+            </v-card-text>
+        </v-card>
     </div>
 </template>
 
