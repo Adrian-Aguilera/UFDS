@@ -1,6 +1,5 @@
 <template>
-    <div>
-        <p>Vista de carro de productos</p>
+    <div class="pa-md-4 mx-lg-auto">
         <CarritoProductoComponent />
     </div>
 </template>
