@@ -14,7 +14,7 @@ export default {
     name: 'ContadorSegundaVista',
     data() {
         return {
-            cantidad: this.$store.getters.getContador
+            cantidad: this.$store.getters.getContador,
         }
     },
     

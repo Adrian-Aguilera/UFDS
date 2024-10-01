@@ -39,7 +39,7 @@ export default {
   name: 'App',
 
   data: () => ({
-     tab: null,
-  }),
+    tab: null,
+  }),  
 }
 </script>
