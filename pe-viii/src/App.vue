@@ -1,14 +1,17 @@
 <template>
   <v-app>
     <v-main>
-      <v-card class="h-100">
+      <v-card class="h-100 rounded-0" >
         <v-tabs
           v-model="tab"
           align-tabs="center"
-          color="deep-purple-accent-4"
+          bg-color="teal-darken-3"
+          slider-color="teal-lighten-3"
+          show-arrows
         >
-          <v-tab :value="1"><router-link to="/">Contador vista 1</router-link></v-tab>
-          <v-tab :value="2"> <router-link to="/contadorSegundaVista">Contador vista 2</router-link></v-tab>
+          <v-tab to="/" :value="1" >Contador vista 1</v-tab>
+          <v-tab to="/contadorSegundaVista" :value="2"> Contador vista 2</v-tab>
+
         </v-tabs>
         <v-tabs-window v-model="tab">
           <v-tabs-window-item
