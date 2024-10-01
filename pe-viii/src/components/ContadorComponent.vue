@@ -1,9 +1,18 @@
 <template>
     <div>
-        <h1>Contador</h1>
-        <p>Valor: {{ contador }}</p>
-        <button @click="incrementar">Incrementar</button>
-        <p>calcular el doble de la cantidad: {{ this.$store.getters.multiplicarContador }}</p>
+        <v-card title="Contador" class="mx-auto" max-width="344">
+            <v-card-text>
+                calcular el doble de la cantidad: <b>{{ this.$store.getters.multiplicarContador }}</b>
+            </v-card-text>
+            <v-card-text>
+                cantidad actual: <b>{{ contador }}</b>
+            </v-card-text>
+            <v-card-actions>
+                <v-btn  @click="incrementar" prepend-icon="$vuetify" variant="outlined">
+                    Incrementar
+                </v-btn>
+            </v-card-actions>
+        </v-card>
     </div>
 </template>
 

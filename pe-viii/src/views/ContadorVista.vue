@@ -1,7 +1,6 @@
 <template>
-    <div>
-        <h1>vista del contador 1</h1>
-        <p>componente:</p>
+    <div class="pa-md-4 mx-lg-auto">
+        <v-alert text="contador" type="success" class="mx-auto" max-width="344"></v-alert>
         <ContadorComponent />
     </div>
 </template>
