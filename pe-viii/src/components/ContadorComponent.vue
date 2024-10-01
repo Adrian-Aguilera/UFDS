@@ -3,6 +3,7 @@
         <h1>Contador</h1>
         <p>Valor: {{ contador }}</p>
         <button @click="incrementar">Incrementar</button>
+        <p>calcular el doble de la cantidad: {{ this.$store.getters.multiplicarContador }}</p>
     </div>
 </template>
 

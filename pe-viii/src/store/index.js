@@ -8,6 +8,9 @@ export default createStore({
   getters: {
     getContador(state){
       return state.contador
+    },
+    multiplicarContador(state){
+      return state.contador * 2
     }
   },
   mutations: {
