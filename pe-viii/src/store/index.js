@@ -3,7 +3,8 @@ import { createStore } from 'vuex'
 export default createStore({
   state: {
     // aqui va el estado de las variables globales
-    contador: 0
+    contador: 0,
+    //
   },
   getters: {
     getContador(state){
