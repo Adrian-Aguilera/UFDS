@@ -1,6 +1,7 @@
 <template>
     <div>
         <v-alert>Buscador de productos</v-alert>
+        
     </div>
 </template>
 <script>

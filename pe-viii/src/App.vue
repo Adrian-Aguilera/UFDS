@@ -13,10 +13,11 @@
           <v-tab to="/contadorSegundaVista" :value="2"> Contador vista 2</v-tab>
           <v-tab to="/carroProducto" :value="3"> Carrito de productos</v-tab>
           <v-tab to="/Usuario" :value="4"> Usuario</v-tab>
+          <v-tab to="/buscador" :value="5"> Buscador</v-tab>
         </v-tabs>
         <v-tabs-window v-model="tab">
           <v-tabs-window-item
-            v-for="n in 4"
+            v-for="n in 5"
             :key="n"
             :value="n"
             class="h-100"
