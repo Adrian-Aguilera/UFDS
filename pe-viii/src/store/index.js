@@ -6,6 +6,14 @@ export default createStore({
     contador: 0,
     //productos: []
     productos: [],
+
+    //usuarios
+    usuarios:[
+      {
+        "usuario": "Usuario1",
+        "pass": "123456"
+      }
+    ]
   },
   getters: {
     getContador(state){
@@ -25,7 +33,15 @@ export default createStore({
         total = parseFloat(total) + parseFloat(producto.precio)
       })
       return total
-    }
+    },
+    obtenerUsuarios(state){
+      //parcear el usaurio que esta logeado
+      let usuarioContenedor = ''
+      state.usuarios.forEach(usuario => {
+        usuarioContenedor = usuario.usuario
+      })
+      return usuarioContenedor
+    },
   },
   mutations: {
     agregarContador(state, cantidad){
@@ -38,7 +54,11 @@ export default createStore({
     //eliminarProducto
     eliminarProducto(state, index){
       state.productos.splice(index, 1)
-    }
+    },
+
+    editarUsuario(state, usuario){
+      state.usuarios.push(usuario)
+    },
   },
   actions: {
     agregarContadorAcction(context, cantidad){
@@ -51,7 +71,11 @@ export default createStore({
     //eliminarProducto
     eliminarProductoAccion(context, index){
       context.commit('eliminarProducto', index)
-    }
+    },
+
+    EditarUsuarioAcction(context, usuario){
+      context.commit('editarUsuario', usuario)
+    },
   },
   modules: {
   }

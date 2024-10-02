@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <v-alert>
+    <div class="pa-md-4 mx-lg-auto">
+        <v-alert class="text-center" type="info">
             Usuario vista
         </v-alert>
         <UsuarioComponent/>
