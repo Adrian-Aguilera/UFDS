@@ -23,7 +23,7 @@
             </v-form>
         </v-sheet>
         <v-alert class="text-center" type="warning" icon="mdi-alert">
-            usaurio que esta logeado {{  this.$store.getters.obtenerUsuarios }}
+            usaurio que esta logeado: <b> {{  this.$store.getters.obtenerUsuarios }}</b>
         </v-alert>
         <hr>
     </div>
