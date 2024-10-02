@@ -13,7 +13,8 @@ export default createStore({
         "usuario": "Usuario1",
         "pass": "123456"
       }
-    ]
+    ],
+    productoStocks:[],
   },
   getters: {
     getContador(state){
@@ -42,6 +43,21 @@ export default createStore({
       })
       return usuarioContenedor
     },
+
+    obtenerProductosStocks(state){
+      return state.productoStocks
+    },
+    //buscarProductoStock
+    buscarProductoStocks(state, buscador){
+      let ProductoEncontrado = []
+      state.productoStocks.forEach(productoStock => {
+        if(productoStock.producto.includes(buscador)){
+          ProductoEncontrado.push(productoStock)
+        }
+      })
+      return ProductoEncontrado
+    }
+
   },
   mutations: {
     agregarContador(state, cantidad){
@@ -59,6 +75,12 @@ export default createStore({
     editarUsuario(state, usuario){
       state.usuarios.push(usuario)
     },
+
+    //agregarProductoStock
+    agregarProductosStpcks(state, productoStock){
+      state.productoStocks.push(productoStock)
+    },
+
   },
   actions: {
     agregarContadorAcction(context, cantidad){
@@ -75,6 +97,9 @@ export default createStore({
 
     EditarUsuarioAcction(context, usuario){
       context.commit('editarUsuario', usuario)
+    },
+    agregarProductosStpcksAcction(context, productoStock){
+      context.commit('agregarProductosStpcks', productoStock)
     },
   },
   modules: {
