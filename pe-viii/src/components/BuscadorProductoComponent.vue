@@ -13,7 +13,14 @@
         </v-sheet>
 
         <v-alert>
-            {{ this.pruductoEncontrado }}
+            <div v-if="this.pruductoEncontrado.error">
+                {{ this.pruductoEncontrado.error }}
+            </div>
+            <div v-else>
+                producto: {{ this.pruductoEncontrado.nombre }}<br>
+                precio: {{ this.pruductoEncontrado.precio }}<br>
+                stock:  {{ this.pruductoEncontrado.stock }}<br>
+            </div>
         </v-alert>
     </div>
 </template>
@@ -23,7 +30,7 @@ export default {
     data() {
         return {
             BuscarProducto: null,
-            pruductoEncontrado: null
+            pruductoEncontrado: []
         }
     },
     methods: {
