@@ -1,7 +1,6 @@
 <template>
     <div>
-        <v-alert>Buscador de productos</v-alert>
-        
+        <v-alert text="Buscador de productos" type="success" class="mx-auto" max-width="344"></v-alert>
     </div>
 </template>
 <script>
