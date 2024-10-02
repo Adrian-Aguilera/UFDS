@@ -3,6 +3,8 @@ import ContadorVista from '../views/ContadorVista.vue'
 import ContadorSegundaVista from '../views/ContadorSegundaVista.vue'
 import CarritoProductoVista from '../views/CarritoProductoVista.vue'
 import UsuarioVista from '../views/UsuarioVista.vue'
+import buscadorVista from '../views/buscadorVista.vue'
+
 const routes = [
   {
     path: '/',
@@ -23,6 +25,11 @@ const routes = [
     path: '/usuario',
     name: 'usuario',
     component: UsuarioVista
+  },
+  {
+    path: '/buscador',
+    name: 'buscador',
+    component: buscadorVista
   }
 ]
 
