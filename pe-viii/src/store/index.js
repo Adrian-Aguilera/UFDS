@@ -1,4 +1,4 @@
-import { createStore } from 'vuex'
+import { createStore } from "vuex";
 
 export default createStore({
   state: {
@@ -8,100 +8,103 @@ export default createStore({
     productos: [],
 
     //usuarios
-    usuarios:[
+    usuarios: [
       {
-        "usuario": "Usuario1",
-        "pass": "123456"
-      }
+        usuario: "Usuario1",
+        pass: "123456",
+      },
     ],
-    productoStocks:[],
+    productoStocks: [],
   },
   getters: {
-    getContador(state){
-      return state.contador
+    getContador(state) {
+      return state.contador;
     },
-    multiplicarContador(state){
-      return state.contador * 2
+    multiplicarContador(state) {
+      return state.contador * 2;
     },
     //obtenerProductos
-    obtenerProductos(state){
-      return state.productos
+    obtenerProductos(state) {
+      return state.productos;
     },
     //obtnerTotal
-    obtenerTotal(state){
-      let total = 0
-      state.productos.forEach(producto => {
-        total = parseFloat(total) + parseFloat(producto.precio)
-      })
-      return total
+    obtenerTotal(state) {
+      let total = 0;
+      state.productos.forEach((producto) => {
+        total = parseFloat(total) + parseFloat(producto.precio);
+      });
+      return total;
     },
-    obtenerUsuarios(state){
+    obtenerUsuarios(state) {
       //parcear el usaurio que esta logeado
-      let usuarioContenedor = ''
-      state.usuarios.forEach(usuario => {
-        usuarioContenedor = usuario.usuario
-      })
-      return usuarioContenedor
+      let usuarioContenedor = "";
+      state.usuarios.forEach((usuario) => {
+        usuarioContenedor = usuario.usuario;
+      });
+      return usuarioContenedor;
     },
 
-    obtenerProductosStocks(state){
-      return state.productoStocks
+    obtenerProductosStocks(state) {
+      return state.productoStocks;
     },
-    //buscarProductoStock
-    buscarProductoStocks(state, buscador){
-      let ProductoEncontrado = []
-      state.productoStocks.forEach(productoStock => {
-        if(productoStock.producto.includes(buscador)){
-          ProductoEncontrado.push(productoStock)
+
+    //buscarProductoStocks
+    buscarProductoStocksGetter(state) {
+      return (NombreProducto) => {
+        const productoEncontrado = state.productoStocks.find(
+          (producto) => producto.nombre === NombreProducto
+        );
+        
+        if (!productoEncontrado) {
+          return { error: "Producto no encontrado" };
         }
-      })
-      return ProductoEncontrado
+    
+        return productoEncontrado;
+      };
     }
-
   },
   mutations: {
-    agregarContador(state, cantidad){
-      state.contador += cantidad
+    agregarContador(state, cantidad) {
+      state.contador += cantidad;
     },
     //agregarProducto
-    agregarProducto(state, producto){
-      state.productos.push(producto)
+    agregarProducto(state, producto) {
+      state.productos.push(producto);
     },
     //eliminarProducto
-    eliminarProducto(state, index){
-      state.productos.splice(index, 1)
+    eliminarProducto(state, index) {
+      state.productos.splice(index, 1);
     },
 
-    editarUsuario(state, usuario){
-      state.usuarios.push(usuario)
+    editarUsuario(state, usuario) {
+      state.usuarios.push(usuario);
     },
 
     //agregarProductoStock
-    agregarProductosStpcks(state, productoStock){
-      state.productoStocks.push(productoStock)
+    agregarProductosStpcks(state, productoStock) {
+      state.productoStocks.push(productoStock);
     },
 
   },
   actions: {
-    agregarContadorAcction(context, cantidad){
-      context.commit('agregarContador', cantidad)
+    agregarContadorAcction(context, cantidad) {
+      context.commit("agregarContador", cantidad);
     },
     //agregarProducto
-    agregarProductoAccion(context, producto){
-      context.commit('agregarProducto', producto)
+    agregarProductoAccion(context, producto) {
+      context.commit("agregarProducto", producto);
     },
     //eliminarProducto
-    eliminarProductoAccion(context, index){
-      context.commit('eliminarProducto', index)
+    eliminarProductoAccion(context, index) {
+      context.commit("eliminarProducto", index);
     },
 
-    EditarUsuarioAcction(context, usuario){
-      context.commit('editarUsuario', usuario)
+    EditarUsuarioAcction(context, usuario) {
+      context.commit("editarUsuario", usuario);
     },
-    agregarProductosStpcksAcction(context, productoStock){
-      context.commit('agregarProductosStpcks', productoStock)
+    agregarProductosStpcksAcction(context, productoStock) {
+      context.commit("agregarProductosStpcks", productoStock);
     },
   },
-  modules: {
-  }
-})
+  modules: {},
+});
