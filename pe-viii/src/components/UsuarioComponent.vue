@@ -13,21 +13,18 @@
                 label="Contraseña"
               ></v-text-field>
 
-            <div style="display: flex; justify-content: center;">
-                <v-btn class="mt-2" type="submit" @click="agregarProducto" block>
-                    <v-icon
-                    icon="mdi-minus-circle"
-                    start
-                  ></v-icon>
-                    Editar
-                </v-btn>
-            </div>
+              <v-btn class="mt-2" type="submit" @click="editarUsuario" block>
+                <v-icon
+                icon="mdi-minus-circle"
+                start
+              ></v-icon>
+                Editar
+            </v-btn>
             </v-form>
-
-            <v-alert>
-                usaurio que esta logeado {{  this.$store.getters.obtenerUsuarios }}
-            </v-alert>
         </v-sheet>
+        <v-alert class="text-center" type="warning" icon="mdi-alert">
+            usaurio que esta logeado {{  this.$store.getters.obtenerUsuarios }}
+        </v-alert>
         <hr>
     </div>
 </template>
@@ -37,7 +34,8 @@ export default {
     data() {
         return {
             usuario: null,
-            pass: null
+            pass: null,
+            usuarioLogeado: this.$store.getters.obtenerUsuarios
         }
     },
     methods: {
@@ -46,6 +44,11 @@ export default {
             this.$store.dispatch('EditarUsuarioAcction', usuarioParcer)
             this.usuario = null
             this.pass = null
+        }
+    },
+    watch: {
+        usuarioLogeado(newVal){
+            this.usuario = newVal
         }
     }
 }
