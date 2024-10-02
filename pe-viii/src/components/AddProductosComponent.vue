@@ -21,7 +21,7 @@
           required
         ></v-text-field>
       </v-container>
-      <v-btn class="mt-2" type="submit" block>Agregar producto</v-btn>
+      <v-btn class="mt-2" type="submit"   @click="agregarProducto" block> Agregar podructo</v-btn>
     </v-form>
   </div>
 </template>
@@ -35,6 +35,15 @@ export default {
       precio: null,
       stock: null,
     };
+  },
+  methods:{
+    agregarProducto(){
+        const ProductoStock = { "nombre": this.nombre, "precio": parseFloat(this.precio), "stock": parseFloat(this.stock) }
+        this.$store.dispatch('agregarProductosStpcksAcction', ProductoStock)
+        this.nombre = null
+        this.precio = null
+        this.stock = null
+    },
   },
 };
 </script>

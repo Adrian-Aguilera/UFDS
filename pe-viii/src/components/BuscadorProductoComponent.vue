@@ -11,6 +11,32 @@
               <v-btn class="mt-2" type="submit" block>Submit</v-btn>
             </v-form>
         </v-sheet>
+
+        <v-table>
+            <thead>
+              <tr>
+                <th class="text-left">
+                  Nombre producto
+                </th>
+                <th class="text-left">
+                  Precio
+                </th>
+                <th class="text-left">
+                    Stock
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr
+                v-for="item in this.$store.getters.obtenerProductosStocks"
+                :key="item.nombre"
+              >
+                <td>{{ item.nombre }}</td>
+                <td>{{ item.precio }}</td>
+                <td>{{ item.stock }}</td>
+              </tr>
+            </tbody>
+          </v-table>
     </div>
 </template>
 <script>
